@@ -2,9 +2,32 @@
 
 <html>
     <head>
-        <title>Gabriels Portfolio</title>
+        <title>Gabriel's Portfolio</title>
     </head>
     <body>
+        <div id="app"></div>
+        <!-- React and ReactDOM Script-->
+        <script src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <!-- Babel Script-->
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+        <script type="text/jsx">
+            function Header() {
+                return <h1>Jesus. Loves. You.</h1>;
+            }
+
+            function HomePage() {
+                return (
+                    <div>
+                    <Header />
+                    </div>
+                );
+            }
+
+            const root = ReactDOM.createRoot(app);
+            root.render(<HomePage />);
+        </script>
+        
         <h1>Gabriel's Portfolio</h1>
         <h2>Projects</h2>
         <ul>
