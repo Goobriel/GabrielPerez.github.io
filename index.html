@@ -2,7 +2,6 @@
 
 <html>
     <head>
-        <title>Gabriel's Portfolio</title>
     </head>
     <body>
         <div id="app"></div>
@@ -12,14 +11,31 @@
         <!-- Babel Script-->
         <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
         <script type="text/jsx">
-            function Header() {
-                return <h1>Jesus. Loves. You.</h1>;
+        
+            const app = document.getElementById("app")
+
+            function Header({ title}) {
+                return <h1>{title ? title : "Jesus Loves You"}</h1>
             }
 
             function HomePage() {
+                const names = ['React', 'Vue', 'Angular'];
+
+                const [likes, setLikes] = React.useState(0);
+
+                function handleClick() {
+                    setLikes(likes + 1);
+                }
+
                 return (
                     <div>
-                    <Header />
+                        <Header title="FrameWorks/Librarys" />
+                        <ul>
+                            {names.map((name) => (
+                                <li key={name}>{name}</li>
+                            ))}
+                        </ul>
+                        <button onClick={handleClick}>Likes({likes})</button>
                     </div>
                 );
             }
@@ -27,12 +43,12 @@
             const root = ReactDOM.createRoot(app);
             root.render(<HomePage />);
         </script>
-        
+<!--        
         <h1>Gabriel's Portfolio</h1>
         <h2>Projects</h2>
         <ul>
         <li><a href = "https://goobriel.github.io">My github</a></li>
         <li><a href = "https://github.com/Goobriel/E-Commerce-Store">E-Commerce Project for Cloud Computing</a></li>
-        </ul>
+        </ul>-->
     </body>
 </html>
