@@ -32,7 +32,7 @@
                         <Header title="FrameWorks/Librarys" />
                         <ul>
                             {names.map((name) => (
-                                <li key={name}>{name}</li>
+                                <li key={name}>{name}<button onClick={handleClick}>{name}({likes})</button></li>
                             ))}
                         </ul>
                         <button onClick={handleClick}>Likes({likes})</button>
